@@ -12,13 +12,16 @@ function addItem()
           'class':'list-group-item',
            text:newTask.val()
       })
+      listItem.click((event)=>{
+          $(event.target).toggleClass('done')
+      })
       ulTask.append(listItem);
       newTask.val('');
       toggleInputBtn();
 };
 function sortItem()
 {
-    $('#ulTask .done').appentTo(ulTask);
+    $('#ulTask .done').appendTo(ulTask);
 }
 function resetItem()
 {
